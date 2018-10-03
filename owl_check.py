@@ -10,18 +10,22 @@ def make_matrix():
         print(nmbrs)
         # Split and put in array:
         nmbrs2 = nmbrs.replace(",", " ").split()
+        for i in nmbrs2:
+            print(i)
         matrix_array.append(nmbrs2)
         next_line = input("Another line? [j/n]")
+    return matrix_array
 
 
-def check_matrix():
-    pass
-
+def check_matrix(mat_arr):
+    print(mat_arr)
+    # Tel aantal regels
+    print("Aantal regels (verticaal): {}".format(len(mat_arr)))
+    print("Aantal cijfers horizontaal".format(len(mat_arr[0])))
 
 
 if __name__ == "__main__":
-    # make matrix with input
-    make_matrix()
-    # check if matrix is owl
-    check_matrix()
+    check_matrix(make_matrix())  # First make the matrix, then check if it is an owl.
+
+
 

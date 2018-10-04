@@ -31,8 +31,13 @@ def check_matrix(mat_arr):
     print("Laatste regel: {}".format(mat_arr[nbr_rules - 1]))
     print("Eerste regel: {}".format(mat_arr[nbr_rules - nbr_rules]))
     # aantal keer dat er regels moeten worden vergeleken:
-    # for x in (0, 5):
-        print(x)
+    # Aantal regels / 2 (bij oneven hoeft tussenregel niet te worden gecheckt)
+    checks = nbr_rules // 2
+    print(checks)
+    for y in range(0, checks):
+        print("Check")
+        # Compare the two rules:
+        print("Nu kijken naar regel {} en {}.".format(y, nbr_rules - y - 1))
 
 
 if __name__ == "__main__":

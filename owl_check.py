@@ -7,11 +7,8 @@ def make_matrix():
     next_line = "j"
     while next_line == "j" or next_line == "J":
         nmbrs = input("Give line of numbers:")
-        print(nmbrs)
         # Split and put in array:
         nmbrs2 = nmbrs.replace(",", " ").split()
-        for i in nmbrs2:
-            print(i)
         matrix_array.append(nmbrs2)
         next_line = input("Another line? [j/n]")
     return matrix_array
@@ -24,21 +21,18 @@ def check_matrix(mat_arr):
     # Eerst checken of elke regel symmetrisch is
     hor_flag = True
     for i in mat_arr:   # voor elke regel:
-        '''
-        print(i)
-        print("Regel: {}".format(i))
-        print("Omgekeerd: {}".format(i[::-1]))
-        '''
         if i != i[::-1]:
             hor_flag = False
     print(hor_flag)
     # Nu checken of het verticaal symetrisch is
     print("Aantal regels (verticaal): {}".format(len(mat_arr)))
-
+    nbr_rules = len(mat_arr)
     # Vergelijk eerste en laatste regel:
-    print("Eerse regel: {}".format(mat_arr[0]))
-    print("Laatste regel: {}".format(mat_arr[]))
-
+    print("Laatste regel: {}".format(mat_arr[nbr_rules - 1]))
+    print("Eerste regel: {}".format(mat_arr[nbr_rules - nbr_rules]))
+    # aantal keer dat er regels moeten worden vergeleken:
+    # for x in (0, 5):
+        print(x)
 
 
 if __name__ == "__main__":

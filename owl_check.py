@@ -20,8 +20,25 @@ def make_matrix():
 def check_matrix(mat_arr):
     print(mat_arr)
     # Tel aantal regels
+    print("Aantal cijfers horizontaal: {}".format(len(mat_arr[0])))
+    # Eerst checken of elke regel symmetrisch is
+    hor_flag = True
+    for i in mat_arr:   # voor elke regel:
+        '''
+        print(i)
+        print("Regel: {}".format(i))
+        print("Omgekeerd: {}".format(i[::-1]))
+        '''
+        if i != i[::-1]:
+            hor_flag = False
+    print(hor_flag)
+    # Nu checken of het verticaal symetrisch is
     print("Aantal regels (verticaal): {}".format(len(mat_arr)))
-    print("Aantal cijfers horizontaal".format(len(mat_arr[0])))
+
+    # Vergelijk eerste en laatste regel:
+    print("Eerse regel: {}".format(mat_arr[0]))
+    print("Laatste regel: {}".format(mat_arr[]))
+
 
 
 if __name__ == "__main__":

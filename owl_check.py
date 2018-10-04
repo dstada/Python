@@ -1,7 +1,7 @@
 '''Owl challenge Sololearn.com
    Asks a matrix of numbers
    and checks if the matrix can be folded
-   horizontal and vertical.
+   horizontally and vertically.
    Input must be rules of numbers, separated by commas.
 
     By: Dick Stada, NL
@@ -29,7 +29,6 @@ def check_matrix(mat_arr):
     for i in mat_arr:   # for each rule:
         if i != i[::-1]:  # rule and reversed rule must be identical
             hor_flag = False
-    print(hor_flag)
     # Check vertical symmetry
     nbr_rules: int = len(mat_arr)
     checks = nbr_rules // 2     # with odd number of rules, central rule not checked
@@ -38,8 +37,7 @@ def check_matrix(mat_arr):
         # Compare the two rules:
         if mat_arr[y] != mat_arr[nbr_rules - y - 1]:
             ver_flag = False
-    print(ver_flag)
-    if hor_flag True and ver_flag True:
+    if hor_flag is True and ver_flag is True:
         print("This matrix is owl!")
     else:
         print("This matrix is unfortunately no owl...")

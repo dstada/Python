@@ -34,10 +34,15 @@ def check_matrix(mat_arr):
     # Aantal regels / 2 (bij oneven hoeft tussenregel niet te worden gecheckt)
     checks = nbr_rules // 2
     print(checks)
+    ver_flag = True
     for y in range(0, checks):
         print("Check")
         # Compare the two rules:
         print("Nu kijken naar regel {} en {}.".format(y, nbr_rules - y - 1))
+        if mat_arr[y] != mat_arr[nbr_rules - y - 1]:
+            print("Vert.check not okay!")
+            ver_flag = False
+    print(ver_flag)
 
 
 if __name__ == "__main__":

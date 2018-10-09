@@ -1,4 +1,4 @@
-'''Simple Search Engine
+"""Simple Search Engine
 
 Imagine you have a database which stores a large amount of user data.
 The user data stored in the database may have the following fields:
@@ -27,7 +27,7 @@ name: "Alice", profession: "UI/UX designer", age: "27"
 
 If the user does not type anything in the search input field, then all the entries in the database
 should be printed to the screen. Use any data for your tests. You can use a random data generator.
-'''
+"""
 
 # dbase data generated with mockaroo.com:
 

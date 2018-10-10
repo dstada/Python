@@ -42,4 +42,45 @@ dbase = [{"id":1,"first_name":"Alis","last_name":"Pidwell","email":"apidwell0@bl
 {"id":9,"first_name":"Darlene","last_name":"Center","email":"dcenter8@uol.com.br","gender":"Female","ip_address":"143.24.131.249"},
 {"id":10,"first_name":"Oates","last_name":"Spradbery","email":"ospradbery9@people.com.cn","gender":"Male","ip_address":"205.167.127.132"}]
 
-print(dbase[0])
+# search_string = input("Search for: ")
+# for i in dbase:
+#     if i["first_name"] == "Alis":
+#             print("YES!")
+#     for x in i:
+#         if i["gender"] == "Male":
+#             print("OK")
+#         else:
+#             print("----")
+#
+#         if i[x] == "Male":
+#             print("OK")
+#         else:
+#             print("----")
+
+# 1: {name: "Alice", profession: "UI/UX Designer", age: "27"}
+# 2: {name: "John", profession: "QA Engineer", age: "33"}
+# 3: {name: "Stuart", profession: "Constructor", age: "19"}
+# 4: …
+# name: "Alice", profession: "UI/UX designer", age: "27"
+
+
+# search(dbase, 'Oates')
+
+myDict = {'age': ['12'], 'address': ['34 Main Street, 212 First Avenue'],
+      'firstName': ['Alan', 'Mary-Ann'], 'lastName': ['Stone', 'Lee']}
+
+myDict = {'age': '12', 'address': '34 Main Street, 212 First Avenue',
+      'firstName': 'Alan Mary-Ann', 'lastName': 'Stone /, Lee'}
+
+def search(values, searchFor):
+    for k in values:
+        for v in values[k]:
+            if searchFor in v:
+                return k
+    return None
+
+
+#   Checking if string 'Mary' exists in dictionary value
+print(search(myDict, 'Mary'))   # prints firstName
+
+

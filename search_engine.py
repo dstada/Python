@@ -31,6 +31,7 @@ should be printed to the screen. Use any data for your tests. You can use a rand
 
 # dbase data generated with mockaroo.com:
 
+
 dbase = [{"id":1,"first_name":"Alis","last_name":"Pidwell","email":"apidwell0@blinklist.com","gender":"Female","ip_address":"53.251.180.248"},
 {"id":2,"first_name":"Chere","last_name":"Coppenhall","email":"ccoppenhall1@fastcompany.com","gender":"Female","ip_address":"252.42.82.23"},
 {"id":3,"first_name":"Melita","last_name":"McWilliams","email":"mmcwilliams2@netlog.com","gender":"Female","ip_address":"123.87.178.129"},
@@ -42,46 +43,6 @@ dbase = [{"id":1,"first_name":"Alis","last_name":"Pidwell","email":"apidwell0@bl
 {"id":9,"first_name":"Darlene","last_name":"Center","email":"dcenter8@uol.com.br","gender":"Female","ip_address":"143.24.131.249"},
 {"id":10,"first_name":"Oates","last_name":"Spradbery","email":"ospradbery9@people.com.cn","gender":"Male","ip_address":"205.167.127.132"}]
 
-# search_string = input("Search for: ")
-# for i in dbase:
-#     if i["first_name"] == "Alis":
-#             print("YES!")
-#     for x in i:
-#         if i["gender"] == "Male":
-#             print("OK")
-#         else:
-#             print("----")
-#
-#         if i[x] == "Male":
-#             print("OK")
-#         else:
-#             print("----")
-
-# 1: {name: "Alice", profession: "UI/UX Designer", age: "27"}
-# 2: {name: "John", profession: "QA Engineer", age: "33"}
-# 3: {name: "Stuart", profession: "Constructor", age: "19"}
-# 4: …
-# name: "Alice", profession: "UI/UX designer", age: "27"
-
-
-# search(dbase, 'Oates')
-
-
-# myDict = {'age': '12', 'address': '34 Main Street, 212 First Avenue', 'first_name': 'Mary', 'last_name': 'Lee'}
-
-
-# def search(values, searchFor):
-#     for k in values:
-#         print(k)
-#         for v in values[k]:
-#             print(v)
-#             if searchFor in v:
-#                 return k
-#     return None
-#
-#
-# #   Checking if string 'Mary' exists in dictionary value
-# print(search(myDict, 'Mary'))
 
 
 dbase = [{"id":1,"first_name":"Alis","last_name":"Pidwell","email":"apidwell0@blinklist.com","gender":"Female","ip_address":"53.251.180.248"},
@@ -94,3 +55,9 @@ for x in dbase:
     for y in x:     # Voor elke record:
         if x.get(y) == zoekwoord:      # Is in deze record en met deze sleutel(y) een value te vinden die "Alis" is?
             print("Naam gevonden!")
+            print(x)
+
+# TODO: Add record
+# TODO: Delete record
+
+

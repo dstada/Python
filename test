@@ -1,0 +1,36 @@
+' Hernoem het bestand D:\Kowala.NET\OpstelAdviesNTService\server.log naar D:\Kowala.NET\OpstelAdviesNTService\server{jaar}{maand}.log
+'
+Set objFSO = CreateObject("Scripting.FileSystemObject")
+
+DIM objShell
+set objShell = wscript.createObject("wscript.shell")
+LogPath = "D:\Kowala.NET\OpstelAdviesNTService\"
+ServName = "OpstelAdviesService"
+StrQuery = "Select * from Win32_Service where Name='" & ServName & "'"
+strComputer = "."
+Set objWMIService = GetObject("winmgmts:" _
+    & "{impersonationLevel=impersonate}!\\" & strComputer & "\root\cimv2")
+Set colServiceList = objWMIService.ExecQuery (StrQuery)
+
+For each objService in colServiceList
+	errReturn = objService.StopService()
+	'wscript.echo "stoppen"
+Next
+
+Wscript.Sleep 50000
+
+intDay = Day(Now)
+intMonth = Month(Now)
+intYear = Year(Now)
+charDay = CStr(intDay)
+charMonth = CStr(intMonth)
+charYear = Cstr(intYear)
+if intDay < 10 then charDay = "0" & charDay
+if intMonth < 10 then charMonth = "0" & charMonth
+objFSO.MoveFile LogPath & "server.log" , LogPath & "server" & charYear & charMonth & charDay & ".log"
+'wscript.echo LogPath & "server.log" & "<>" & LogPath & "server" & charYear & charMonth & charDay & ".log"
+
+For each objService in colServiceList
+	errReturn = objService.StartService()
+'	wscript.echo "starten"
+Next

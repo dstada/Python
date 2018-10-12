@@ -66,21 +66,31 @@ dbase = [{"id":1,"first_name":"Alis","last_name":"Pidwell","email":"apidwell0@bl
 
 # search(dbase, 'Oates')
 
-myDict = {'age': ['12'], 'address': ['34 Main Street, 212 First Avenue'],
-      'firstName': ['Alan', 'Mary-Ann'], 'lastName': ['Stone', 'Lee']}
 
-myDict = {'age': '12', 'address': '34 Main Street, 212 First Avenue',
-      'firstName': 'Alan Mary-Ann', 'lastName': 'Stone /, Lee'}
-
-def search(values, searchFor):
-    for k in values:
-        for v in values[k]:
-            if searchFor in v:
-                return k
-    return None
+# myDict = {'age': '12', 'address': '34 Main Street, 212 First Avenue', 'first_name': 'Mary', 'last_name': 'Lee'}
 
 
-#   Checking if string 'Mary' exists in dictionary value
-print(search(myDict, 'Mary'))   # prints firstName
+# def search(values, searchFor):
+#     for k in values:
+#         print(k)
+#         for v in values[k]:
+#             print(v)
+#             if searchFor in v:
+#                 return k
+#     return None
+#
+#
+# #   Checking if string 'Mary' exists in dictionary value
+# print(search(myDict, 'Mary'))
 
 
+dbase = [{"id":1,"first_name":"Alis","last_name":"Pidwell","email":"apidwell0@blinklist.com","gender":"Female","ip_address":"53.251.180.248"},
+{"id":2,"first_name":"Chere","last_name":"Coppenhall","email":"ccoppenhall1@fastcompany.com","gender":"Female","ip_address":"252.42.82.23"},
+{"id":3,"first_name":"Melita","last_name":"McWilliams","email":"mmcwilliams2@netlog.com","gender":"Female","ip_address":"123.87.178.129"}]
+
+zoekwoord = input("Geef zoekwoord:")
+
+for x in dbase:
+    for y in x:     # Voor elke record:
+        if x.get(y) == zoekwoord:      # Is in deze record en met deze sleutel(y) een value te vinden die "Alis" is?
+            print("Naam gevonden!")

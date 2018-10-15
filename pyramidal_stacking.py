@@ -30,13 +30,16 @@ nmbrs = [[1,2,3]]
 # nmbrs = [1,2]
 # nmbrs = [0,1,0,1]
 
-# len_nmbrs = len(nmbrs)
-# print(len_nmbrs)
-# for i in range(len_nmbrs-1):
-#     arr_temp = []
+len_first_row = len(nmbrs[0])
+print(len_first_row)
+for i in range(len_first_row-1):    # Dit moest net zoveel keer totdat er een overblijft.
+    arr_temp = []
+    # Pak laatste element uit nmbrs:
+    print(reversed(nmbrs)))[0])
 
 nmbrs.append([1,2])
 print(nmbrs)
 
-print(nmbrs[1])
-print(nmbrs[0])
+# print the pyramid:
+for x in reversed(nmbrs):
+    print(x)

@@ -4,19 +4,12 @@ Monday Blue 💙 Challenge Series #13
 
 Let's do some counting this week! This time we will need to determine which finger was last counted using Sololand's arithmetic. Assume that we will use both our hands with 5 fingers, here's how we do the counting start with the left-hand:-
 
-Left Hand
-Thumb: 1
-Index: 2
-Middle: 3
-Ring: 4
-Baby: 5
-
-Right Hand
-Thumb: 6
-Index: 7
-Middle: 8
-Ring: 9
-Baby: 10
+Left Hand       Right Hand
+Thumb: 1        Thumb: 6
+Index: 2        Index: 7
+Middle: 3       Middle: 8
+Ring: 4         Ring: 9
+Baby: 5         Baby: 10
 
 Once we reached to the end, we will continue the count backwards and here's the label for each of the fingers count up to 31:-
 
@@ -51,34 +44,30 @@ BONUS
 Clear-cut and optimized approach is encouraged.
 
 Happy Coding!!!
+--------------------------------------
+By: Dick STADA, NL
+October 2018
+
+This was helpful:
+
+    1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17	18	19	20	21	22	23	24	25	26	27	28	29	30
+    d	w	m	r	p	dr	wr	mr	rr	pr
+                                       pr	rr	mr	wr	dr	p	r	m	w	d
+                                                                          d	w	m	r	p	dr	wr	mr	rr	pr
+                                                                                                             pr	rr	mr
 """
 
 
 def take_finger(nmbr):
-    # nmbr = int(input("Give number: "))
-    print(nmbr)
-    hand = ["t", "i", "m", "r", "b", "t_r", "i_r", "m_r", "r_r", "b_r"]
-    rev_hand = list(reversed(hand))
-
-    '''
-    1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17	18	19	20	21	22	23	24	25	26	27	28	29	30	31	32	33	34	35	36	37
-    d	w	m	r	p	dr	wr	mr	rr	pr																											
-                                       pr	rr	mr	wr	dr	p	r	m	w	d																		
-                                                                          d	w	m	r	p	dr	wr	mr	rr	pr									
-                                                                                                             pr	rr	mr	wr	dr   p   r   m   w   d
-    '''
-
-    time_nine = nmbr//9
-    print(time_nine)
-    rest = nmbr % 9
-    print(rest)
-    if time_nine % 2 == 0:
-        print("Even")
+    hand = ["Thumb (Left)", "Index Finger (Left)", "Middle Finger (Left)", "Ring Finger (Left)", "Baby Finger (Left)",
+            "Thumb (Right)", "Index Finger (Right)", "Middel Finger (Right)", "Ring Finger (Right)",
+            "Baby Finger (Right)"]
+    time_nine = nmbr // 9       # How many times fits 9 in number
+    rest = nmbr % 9             # What's the rest after dividing by 9
+    if time_nine % 2 == 0:      # Even
         print("Finger: {}".format(hand[rest - 1]))
-    else:
-        print("Odd")
-        print("Finger: {}".format((list(rev_hand))[rest - 1]))
-        # print("Finger: {}".format((list(reversed(hand)))[rest - 1]))
+    else:                       # Odd
+        print("Finger: {}".format((list(reversed(hand)))[rest - 1]))
 
 
 if __name__ == "__main__":

@@ -15,31 +15,33 @@ Integers can appear more than once in the list. You may assume all numbers in th
 Write a program to check if the user input has a guitar subset for the specified number G
 or not (both the list of integers and the number G are input parameters).
 """
-from itertools import combinations
+
+import itertools
 nmbr = int(input("Give a number:"))
-# S = []
 lst_str = input("Give a list of integers, separated by a space")
-print(lst_str)
 # Make list of the numbers in lst_str:
-lst = lst_str.split()       # Make a list of the npu string
-print(lst)
-# Find out all combinations of the elements of lst:
+lst = lst_str.split()       # Make a list of the input string
+lst_int = []
+for i in lst: lst_int.append(int(i))
+# Make a list of all possible combinations of the input-list-items:
+combinations = []
+for i in range(1, len(lst_int) + 1):       #  1 until lenght of the list
+    # Do itertools.combinations with the input list en dan  voor het aantal keer dat de inputlist lang is,
+    # Number of items in the combination should be i,
+    # Create a small list:
+    comb = [list(x) for x in itertools.combinations(lst_int, i)]
+    combinations.extend(comb)            # Extend the combinations list with the little com list
+
+# Test is sum of each item is equal to the input number:
+outpt = []
+for x in combinations:
+    if  sum(x) == int(nmbr):
+        outpt.append(x)
+if len(outpt) > 0:
+    print("Possible combinations:")
+    for q in outpt:
+        print(q)
+else:
+    print("No combinations possible...")
 
 
-from itertools import combinations as comb
-g = int(input())
-l = list(input().split(","))
-for i in range(len(l)):
-    l[int(i)] = int(l[int(i)])
-def solve():
-    for i in range(len(l)):
-        for c in comb(l,i+1):
-            if sum(c) == g:
-                yield c
-if solve() == None:
-    print("No subsets found.")
-    exit()
-print("Target number:",g,"\nInitial set:",l,"\nGuitar subset(s):",list(solve()))
-
-if __name__ == "__main__":
-    print("Einde")

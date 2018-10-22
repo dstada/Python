@@ -7,9 +7,10 @@ b = []
 c = []
 plus = []
 minus = []
-print(eq, '\n')
+print(eq, '\n')     # '\n' voor extra lege regel
+# Maak list met cijfers 0 tot lengte van de input:
 eq_l = list(range(len(eq)))
-print(eq_l)
+
 # delete spaces
 for i in eq_l:
     eq_l[i] = eq[i]

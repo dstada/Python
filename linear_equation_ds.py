@@ -36,22 +36,22 @@ if len(eq_x_part.split("x")[1]) > 0:    # if there is something at right of x, t
     x_part_value = eq_x_part.split("x")[0]
     print("x value: {}".format(x_part_value))
 else:                                   # nothing right of x, so x-part is right part
-    print("x in right part of {}".format(eq_x_part))                 # x-part has all chars right, including utter right + or - sign
+    print("x in right part of {}".format(eq_x_part))     # x-part has all chars right, including utter right + or - sign
 
-
-    print("te bekijken deel: {}".format(eq_x_part.split("x")[0]))
-    print("te bekijken deel: {}".format(eq_x_part))
-    print("splitsteken min:  {}".format(eq_x_part.split("x")[1].rfind("-")))
-    print("splitsteken plus:  {}".format(eq_x_part.split("x")[1].rfind("+")))
-
-if eq_x_part.split("x")[1].rfind("+") > eq_x_part.split("x")[1].rfind("-"):
+    print("te bekijken deel (zonder x): {}".format(eq_x_part.split("x")[0]))   # part without x
+    print("te bekijken deel (met x): {}".format(eq_x_part))
+    # Min-teken erin?:
+    if eq_x_part.split("x")[0].rfind("+") > eq_x_part.split("x")[0].rfind("-"):
         print("splitsteken is een +")
-else:
+        split_sign = "+"
+    else:
         print("splitsteken is een -")
+        split_sign = "-"
+    rest_value_x_part = eq_x_part.split(split_sign)[0].split("-")[0]
+    x_part_value = eq_x_part.split("x")[0].split(split_sign)[1]
 
-
-
-
+print("rest_value_x_part: {}".format(rest_value_x_part))
+print("x_part_value: {}".format(x_part_value))
 
 # if 'eq_left_x' in globals():
 #     print("ja")

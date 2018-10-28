@@ -19,4 +19,6 @@ print(eq_right)
 eq_right = eq_right / eq_left_left
 print(eq_right)
 
-# https://code.sololearn.com/cZJeTyhTIexH/#py
+def sdfsdfsd():
+    pass
+

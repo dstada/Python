@@ -31,7 +31,7 @@ def list_entries():
 
 
 def add_entry():
-    print("adding...")
+    print("Adding...")
 
 
 main()

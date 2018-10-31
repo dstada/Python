@@ -32,18 +32,46 @@ print(parser.parse('January 11, 2010').strftime("%A"))
 
 print(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"][calendar.weekday(2017, 12, 22)])
 
-print("Choose your format:")
+print("Give your day and choose your format:")
+dt = input("Give date: ")
 cmd = None
 while cmd != 'x':
-    cmd = input('[a] 21/03/2012 \n[b] January 11, 2010 \n[c] 2012, 3, 23 \nE[x]it\n ')
+    cmd = input('[a] 21/03/2012 \n[b] January 11, 2010 \n[c] 2012, 3, 23 \n[d] 20181231\n[e] 31122018\nE[x]it\n'
+                '[f] 31-12-2018\n[g] 12-31-2018')
     cmd = cmd.lower().strip()
     if cmd == 'a':
         print("Choice is a")
+        form = "a"
+        day, month, year = (int(x) for x in dt.split('/'))
+        ans = datetime.date(year, month, day)
+        print(ans.strftime("%A"))
         break
     elif cmd == 'b':
         print("Choice is b")
+        form = "b"
+        break
     elif cmd == 'c':
         print("Choice is c")
+        form = "c"
+        break
+    elif cmd == "d":
+        print("Choice is d")
+        form = "d"
+    elif cmd == "e":
+        print("Choice is e")
+        form = "e"
+    elif cmd == "f":
+        print("Choice is f")
+        form = "f"
+        day, month, year = (int(x) for x in dt.split('-'))
+        ans = datetime.date(year, month, day)
+        print(ans.strftime("%A"))
+        break
+    elif cmd == "g":
+        print("Choice is g")
+        form = "g"
     elif cmd != 'x':
         print("Sorry, we don't understand {}".format(cmd))
+
+
 

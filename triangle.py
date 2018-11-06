@@ -20,7 +20,7 @@ for s in range(3):
     try:
         nbr = int(input("Give positive number: "))
         sides.append(nbr)
-    except:
+    except ValueError:
         print("Number is no integer. Run again.")
         exit()
 

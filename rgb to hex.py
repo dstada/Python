@@ -19,8 +19,14 @@ Hex equivalent: #777777 or #777
 By: Dick Stada, NL
 November 2018
 See: https://www.w3schools.com/colors/colors_picker.asp
+and see: https://pypi.org/project/colour/
 """
-color = list((map(int, input("Give rgb by three numbers 0-255, separated by a space:").split())))
+import colour as colour
+
+color = [256, 256, 256]
+while color[0] > 255 or color[1] > 255 or color[2] > 255:
+    color = list((map(int, input("Give rgb by three numbers 0-255, separated by a space:").split())))
+
 print(color)
 
 
@@ -31,8 +37,10 @@ def rgb_to_hex(rgb):
             hexa = hexa + "0" + str(hex(i))[2]
         else:
             hexa = hexa + str(hex(i))[2:4]
-    hexa = "x" + hexa
+    hexa = "#" + hexa
     return hexa
 
 
-print(rgb_to_hex(color))
+hx = rgb_to_hex(color)
+print(hx)
+print(colour.Color(hx))     # prints name of the colour if it exists
